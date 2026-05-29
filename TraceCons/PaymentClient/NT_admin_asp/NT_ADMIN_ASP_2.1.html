@@ -1,0 +1,215 @@
+<!--
+----- Copyright --------------------------------------------------------
+(c)2000 Copyright QSI Payments, Inc. - All Rights Reserved
+Copyright Statement: http://www.qsipayments.com/copyright/Payment_Client
+------------------------------------------------------------------------
+
+Identification:
+	$Id: NT_ADMIN_ASP_2.1.html,v 1.1 2000/05/17 06:13:09 jeremym Exp $	
+-->
+
+<HTML>
+<HEAD>
+<TITLE>NT_ADMIN_ASP_0.2.1-1</TITLE>
+</HEAD>
+
+<BODY LINK="#0000ff" VLINK="#800080" bgcolor="#FFFFFF">
+<P ALIGN="CENTER">&nbsp;<I><FONT FACE="Arial" SIZE=7>Payment Client</font></i></P>
+<FONT FACE="Arial" SIZE=7> 
+<P ALIGN="CENTER">Administration Methods<br>
+  ASP Interface</P>
+<P ALIGN="CENTER">V 2.1</P>
+</FONT><FONT FACE="HelveticaNeue Extended" SIZE=5> 
+<P>ASP Integration Examples</P>
+</FONT> 
+<DIR> 
+  <DIR> 
+    <DIR> 
+      <DIR> <FONT FACE="HelveticaNeue Extended" SIZE=5> </font> 
+        <p>This is an example of an ASP integration to the Payment Client for 
+          the Administration Methods Payment Capture and Shopping Transaction 
+          History Search.</p>
+      </DIR>
+    </DIR>
+  </DIR>
+</DIR>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4><P>Before you start</P>
+</FONT><B><FONT FACE="Arial"><P>Step 1. The following assumptions are made: </P>
+
+</font></B> 
+<UL>
+  <FONT FACE="Arial"></font> 
+  <DIR><FONT FACE="Arial"></font> 
+    <DIR> <FONT FACE="Arial"></font> 
+      <UL>
+        <FONT FACE="Arial"><B> </b></font> 
+        <LI>The Payment Client has been installed with COM registration </LI>
+        <LI>Your web server is configured to use ASP and COM. (This is the default 
+          for Microsoft IIS). </LI>
+        <LI>You have Administrator privileges for your computer </LI>
+        <LI>Your merchant record at the Bank has the following configuration: 
+          <ul>
+            <li>Merchant granted privilege 'extPaySelect'; </li>
+          </ul>
+        </LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+
+<B><FONT FACE="Arial"><P>Step 2. You will need the following information prior to the install: </P>
+
+</font></B>
+<UL>
+  <FONT FACE="Arial"></font>
+  <DIR><FONT FACE="Arial"></font>
+    <DIR> <FONT FACE="Arial"></font> 
+      <UL>
+        <FONT FACE="Arial"><B> </b></font> 
+        <LI>ASP file directory (c:\Inetpub\wwwroot) </LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4>
+<P>Installing ASP integration examples</P>
+</FONT><FONT FACE="HelveticaNeue ThinExt" SIZE=4></FONT><B><FONT FACE="Arial">
+<P><b><font face="Arial">Step 3. Running the Installshield</font></b></P>
+</font></B>
+<ul>
+  <font face="Arial"></font> 
+  <dir><font face="Arial"></font> 
+    <dir> <font face="Arial"></font> 
+      <ul>
+        <font face="Arial"><b> </b></font> 
+        <li>Execute the file .\NT_admin_asp\setup.exe</li>
+        <li>At the prompts enter the information you have gathered at Step 2</li>
+      </ul>
+    </dir>
+  </dir>
+</ul>
+<B><FONT FACE="Arial">
+<P>Step 4. Running the ASP servlet example</P>
+</font></B><B><FONT FACE="Arial"></font></B><B><FONT FACE="Arial"></font></B> 
+<UL>
+  <FONT FACE="Arial"></font> 
+  <DIR><FONT FACE="Arial"></font> 
+    <DIR> <FONT FACE="Arial"></font> 
+      <UL>
+        <FONT FACE="Arial"><B> </b></font> 
+        <LI>Once the installation of the ASP Payment Client Interface is complete 
+          you should be able to run the example that uses the ASP Interface. The 
+          following URLs will demonstrate the interfaces: <br>
+          <b>Admin Capture</b>: <A HREF="http://localhost/AdminCapture_Order.asp">http://localhost/AdminCapture_Order.asp</A> 
+          <br>
+          <b>Admin Shopping Transaction History</b>: <a href="http://localhost/AdminShopTrans_Order.asp">http://localhost/AdminShopTrans_Order.asp</a>.</LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4><P>How to use the examples in your Shop &amp; Buy</P>
+</FONT> 
+<DIR> 
+  <DIR> 
+    <DIR> 
+      <DIR> <FONT FACE="HelveticaNeue ThinExt" SIZE=4> </font> 
+        <P>Before integrating into your Shop & Buy it is important to understand 
+          the message flow of the files contained within the package. Once the 
+          Admin*.asp file's form is completed, the following steps occur: </P>
+      </DIR>
+    </DIR>
+  </DIR>
+</DIR>
+
+
+<UL>
+  <DIR> 
+    <DIR> 
+      <UL>
+        <LI>The form submits the field values to AdminCapture.asp and AdminShopTrans.asp 
+          respectively.</LI>
+        <LI>These servlets make calls to the Payment Client, which takes care 
+          of encryption and messaging to the Payment Server.</LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+<DIR>
+<DIR>
+<DIR>
+      <DIR> 
+        <DIR> 
+          <DIR> 
+            <DIR> <B></B> 
+              <P><FONT FACE="Arial"><B>NOTE :</b></font><FONT FACE="Arial"> For 
+                the integrator much of this logic is hidden. The ASP source is 
+                well documented to show the basic method of initializing a message.</font></P>
+            </DIR>
+          </DIR>
+        </DIR>
+        <P>Logical flow through an Administration Method process: </P>
+      </DIR>
+</DIR>
+</DIR>
+</DIR>
+
+
+<UL>
+  <DIR> 
+    <DIR> 
+      <UL>
+        <LI>Creating a Payment Client instance </LI>
+        <LI>Sending a doAdminCapture or doAdminShoppingTransactionHistory call</LI>
+        <LI>Taking and encrypted DR (Digital Receipt) </LI>
+        <LI>Closing the instance </LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+<DIR> 
+  <DIR> 
+    <DIR> 
+      <DIR> 
+        <p>For further information refer to the in-code documentation and the 
+          Payment Client Manual. </p>
+      </DIR>
+    </DIR>
+  </DIR>
+</DIR>
+
+<FONT FACE="HelveticaNeue Extended" SIZE=5><P>Files included:</P>
+</FONT><FONT FACE="HelveticaNeue ThinExt" SIZE=4>
+<P>ASP</P>
+
+</FONT><UL><DIR><DIR>
+      <UL>
+        <FONT FACE="HelveticaNeue ThinExt" SIZE=4> </font> 
+        <LI>AdminCapture.asp</LI>
+        <LI>AdminCapture_Order.asp</LI>
+        <LI>AdminShopTrans.asp</LI>
+        <LI>AdminShopTrans_Order.asp</LI>
+        <LI>Receipt.asp</LI>
+        <LI>Error.asp </LI>
+      </UL>
+</DIR>
+</DIR>
+</UL>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4>
+<P>Other</P>
+</FONT><FONT FACE="HelveticaNeue ThinExt" SIZE=4></FONT><FONT FACE="HelveticaNeue ThinExt" SIZE=4></FONT> 
+<UL>
+  <DIR> 
+    <DIR> 
+      <UL>
+        <FONT FACE="HelveticaNeue ThinExt" SIZE=4> </font> 
+        <LI>This file</LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+</BODY>
+</HTML>

@@ -1,0 +1,235 @@
+<!--
+----- Copyright --------------------------------------------------------
+(c)2000 Copyright QSI Payments, Inc. - All Rights Reserved
+Copyright Statement: http://www.qsipayments.com/copyright/Payment_Client
+------------------------------------------------------------------------
+
+Identification:
+	$Id: NT_MOTO_JAVA_2.1.html,v 1.1 2000/05/17 06:13:43 jeremym Exp $	
+-->
+
+<HTML>
+<HEAD>
+<TITLE>NT_MOTO_JAVA_0.2.1-1</TITLE>
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" bgcolor="#FFFFFF">
+<P ALIGN="CENTER">&nbsp;<I><FONT FACE="Arial" SIZE=7>Payment Client</font></i></P>
+<FONT FACE="Arial" SIZE=7>
+<P ALIGN="CENTER">MOTO Java Interface</P>
+<P ALIGN="CENTER">V 2.1</P>
+</FONT><FONT FACE="HelveticaNeue Extended" SIZE=5>
+<P>Java Integration Examples</P>
+</FONT> 
+<DIR> 
+  <DIR> 
+    <DIR> 
+      <DIR> <FONT FACE="HelveticaNeue Extended" SIZE=5> </font> 
+        <p>This is an example of a Java integration to the Payment Client for 
+          the MOTO Payment Gateway.</p>
+        <p>MOTO stands for Mail Order Telephone Order and describes 2 party transactions 
+          where the merchants already have the customers Credit Card details and 
+          wish to transmit them securely to the Payment Server. This allows for 
+          batching of transactions.</p>
+      </DIR>
+    </DIR>
+  </DIR>
+</DIR>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4><P>Before you start</P>
+</FONT><B><FONT FACE="Arial"><P>Step 1. The following assumptions are made: </P>
+
+</font></B> 
+<UL>
+  <FONT FACE="Arial"></font> 
+  <DIR><FONT FACE="Arial"></font> 
+    <DIR> <FONT FACE="Arial"></font> 
+      <UL>
+        <FONT FACE="Arial"><B> </b></font> 
+        <li>You have Java installed on your server </li>
+        <LI>Your Web Server is configured to use Java servlets, and the servlet 
+          engine's classpath points to both the Payment Client classes directory (eg C:\QSIPayments\PaymentClient\classes) 
+          and the Web Server's servlet directory. (eg C:\Inetpub\servlet)</LI>
+        <li>You have Administrator privileges for your computer</li>
+        <li>The Payment Client has been installed </li>
+        <li>Your merchant record at the Bank has the following configuration: 
+          <ul>
+            <li>Merchant granted privilege 'moto'.</li>
+          </ul>
+        </li>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+
+<B><FONT FACE="Arial"><P>Step 2. You will need the following information prior to the install: </P>
+
+</font></B> 
+<UL>
+  <FONT FACE="Arial"></font> 
+  <DIR><FONT FACE="Arial"></font> 
+    <DIR> <FONT FACE="Arial"></font> 
+      <UL>
+        <FONT FACE="Arial"><B> </b></font> 
+        <li>Web Server servlet directory (eg. c:\Inetpub\servlet) </li>
+        <li>HTML file directory (c:\Inetpub\wwwroot) </li>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4>
+<P>Installing Java integration examples</P>
+</FONT><FONT FACE="HelveticaNeue ThinExt" SIZE=4></FONT><B><FONT FACE="Arial"> 
+<P><b><font face="Arial">Step 3. Running the Installshield</font></b></P>
+</font></B>
+<ul>
+  <font face="Arial"></font> 
+  <dir><font face="Arial"></font> 
+    <dir> <font face="Arial"></font> 
+      <ul>
+        <font face="Arial"><b> </b></font> 
+        <li>Execute the file .\NT_moto_java\setup.exe</li>
+        <li>At the prompts enter the information you have gathered at Step 2</li>
+      </ul>
+    </dir>
+  </dir>
+</ul>
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4></FONT><B><FONT FACE="Arial">
+<P>Step 4. Running the Java example</P>
+</font></B><B><FONT FACE="Arial"></font></B> 
+<UL>
+  <FONT FACE="Arial"></font> 
+  <DIR><FONT FACE="Arial"></font> 
+    <DIR> <FONT FACE="Arial"></font> 
+      <UL>
+        <FONT FACE="Arial"><B> </b></font> 
+        <LI>Once the installation of the Java Payment Client Interface is complete 
+          and the web server is configured to execute Java servlets, you should 
+          be able to run the example that uses the Java Interface. This should 
+          be able to start from the following URL: <A HREF="http://127.0.0.1/Java_MOTO_Order.html">http://localhost/Java_MOTO_Order.html</A> 
+        </LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4><P>How to use the examples in your Shop &amp; Buy</P></FONT>
+<DIR>
+  <DIR> 
+    <DIR> 
+      <DIR> <FONT FACE="HelveticaNeue ThinExt" SIZE=4> </font> 
+        <P>Before to integrate into your Shop &amp; Buy it is important to understand 
+          the message flow of the files contained within the package. Once the 
+          Java_MOTO _Order.html file's form is completed, the following steps 
+          occur:</P>
+      </DIR>
+    </DIR>
+  </DIR>
+</DIR>
+
+
+<UL>
+  <DIR> 
+    <DIR> 
+      <UL>
+        <LI>The form submits the field values to MOTO_Servlet.class.</LI>
+        <LI>This servlet will make calls to the Payment Client, which takes care 
+          of encryption and messaging to the Payment Server.</LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+
+<B></B>
+              <P><FONT FACE="Arial"><B>NOTE :</b></font><FONT FACE="Arial"> For 
+                the integrator much of this logic is hidden. The servlet source 
+                is well documented to show the basic method of initializing a 
+                payment.</font></P>
+            </DIR>
+</DIR>
+</DIR>
+
+        <P>Logical flow through an MOTO Payment process: </P>
+      </DIR>
+</DIR>
+</DIR>
+</DIR>
+
+
+<UL>
+  <DIR> 
+    <DIR> 
+      <UL>
+        <LI>Creating a Payment Client instance </LI>
+        <LI>Sending a sendMOTODigitalOrder call </LI>
+        <LI>Closing the instance </LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+<DIR>
+<DIR>
+<DIR>
+      <DIR> 
+        <P>For further information refer to the in-code documentation and the 
+          Payment Client Manual. </P>
+      </DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<FONT FACE="HelveticaNeue Extended" SIZE=5><P>Files included:</P>
+</FONT><FONT FACE="HelveticaNeue ThinExt" SIZE=4><P>HTML</P>
+
+</FONT><UL><DIR><DIR>
+<UL>
+
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4>
+</font>
+        <LI>Java_MOTO_Order.html </LI>
+      </UL>
+</DIR>
+</DIR>
+</UL>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4><P>Java Classes</P>
+
+</FONT><UL><DIR><DIR>
+      <UL>
+        <FONT FACE="HelveticaNeue ThinExt" SIZE=4> </font> 
+        <LI>MOTO_Servlet</LI>
+        <LI>ErrorPage</LI>
+        <LI>ReceiptPage </LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+<UL>
+  <DIR>
+    <DIR></DIR>
+</DIR>
+</UL>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4><P>Other</P>
+
+</FONT>
+<UL>
+  <DIR> 
+    <DIR> 
+      <UL>
+        <FONT FACE="HelveticaNeue ThinExt" SIZE=4> </font> 
+        <LI>This file</LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+</BODY>
+</HTML>

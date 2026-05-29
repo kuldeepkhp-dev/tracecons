@@ -1,0 +1,2 @@
+regsvr32 HashCryptStreams.dll
+regsvr32 newobjectspack1.dll

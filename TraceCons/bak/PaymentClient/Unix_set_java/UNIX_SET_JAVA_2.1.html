@@ -1,0 +1,261 @@
+<!--
+----- Copyright --------------------------------------------------------
+(c)2000 Copyright QSI Payments, Inc. - All Rights Reserved
+Copyright Statement: http://www.qsipayments.com/copyright/Payment_Client
+------------------------------------------------------------------------
+
+Identification:
+	$Id: UNIX_SET_JAVA_2.1.html,v 1.1 2000/05/17 06:13:50 jeremym Exp $	
+-->
+
+<HTML>
+<HEAD>
+<TITLE>UNIX_SET_JAVA_2.1</TITLE>
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" bgcolor="#FFFFFF">
+<P ALIGN="CENTER">&nbsp;<I><FONT FACE="Arial" SIZE=7>Payment Client</font></i></P>
+<FONT FACE="Arial" SIZE=7> 
+<P ALIGN="CENTER">SET™ Payment Gateway<br>
+  Java Interface</P>
+<P ALIGN="CENTER">V 2.1</P>
+</FONT><FONT FACE="HelveticaNeue Extended" SIZE=5> 
+<P>Java Integration Examples</P>
+</FONT> 
+<DIR> 
+  <DIR> 
+    <DIR> 
+      <DIR> <FONT FACE="HelveticaNeue Extended" SIZE=5> </font> 
+        <p>This is an example of a Java integration to the Payment Client for 
+          the SET Payment Gateway. This is a transaction which is processed using 
+          the Secure Electronic Transaction (SET) architecture.</p>
+      </DIR>
+    </DIR>
+  </DIR>
+</DIR>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4><P>Before you start</P>
+</FONT><B><FONT FACE="Arial"><P>Step 1. The following assumptions are made: </P>
+
+</font></B> 
+<UL>
+  <FONT FACE="Arial"></font> 
+  <DIR><FONT FACE="Arial"></font> 
+    <DIR> <FONT FACE="Arial"></font> 
+      <UL>
+        <FONT FACE="Arial"><B> </b></font> 
+        <LI>You have Java installed on your server </LI>
+        <LI>Your Web Server is configured to use Java servlets, and the servlet 
+          engine's classpath points to both the Payment Client classes directory (eg /usr/local/QSIPayments/PaymentClient/classes) 
+          and the Web Server's servlet directory (eg /home/httpd/servlet).</LI>
+        <LI>You have permissions to create directories and execute shell scripts 
+          (root user is recommended) </LI>
+        <LI>The Payment Client has been installed </LI>
+        <LI>Your merchant record at the Bank has the following configuration: 
+          <ul>
+            <li>Merchant granted privilege 'SET'.</li>
+          </ul>
+        </LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+
+<B><FONT FACE="Arial"><P>Step 2. You will need the following information prior to the install: </P>
+
+</font></B> 
+<UL>
+  <FONT FACE="Arial"></font> 
+  <DIR><FONT FACE="Arial"></font> 
+    <DIR> <FONT FACE="Arial"></font> 
+      <UL>
+        <FONT FACE="Arial"><B> </b></font> 
+        <LI>Web Server servlets directory (eg. /home/httpd/servlet) </LI>
+        <LI>HTML file directory (eg. /home/httpd/html) </LI>
+        <LI>The preferred transaction type for your SET transactions (either Sale 
+          or Auth)</LI>
+        <LI>Your Merchant Shop ID (eg 12345678955)</LI>
+        <LI>The host address of your SET helper (ie IP Number or IP Name)</LI>
+        <LI>The port number of your SET helper (eg 11257)</LI>
+        <LI>The MPOS (Merchant Point of Sale) Wakeup URL (eg http://&lt;domain&gt;:10257/)</LI>
+        <LI>The MPOS Transaction URL (eg http://&lt;domain&gt;:257/)</LI>
+        <LI>The URL for SET transactions (eg http://&lt;webserver_domain&gt;/servlet/SET_Transaction_Servlet?sessionId=[TRANSID])</LI>
+        <LI>The URL for SET transaction failure notices (eg http://&lt;webserver_domain&gt;/Java_SET_Order.html)</LI>
+        <LI>The URL for SET transaction success notices (eg http://&lt;webserver_domain&gt;/Java_SET_Order.html) 
+        </LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4>
+<P>Installing Java integration examples</P>
+</FONT><FONT FACE="HelveticaNeue ThinExt" SIZE=4></FONT><B><FONT FACE="Arial">
+<P>Step 3. Running the shell script</P>
+
+</font></B> 
+<UL>
+  <FONT FACE="Arial"></font> 
+  <DIR><FONT FACE="Arial"></font> 
+    <DIR> <FONT FACE="Arial"></font> 
+      <UL>
+        <FONT FACE="Arial"><B> </b></font> 
+        <LI>Copy the "UNIX_SET_JAVA_2.1.tar.gz" file into a temporary directory 
+        </LI>
+        <LI>Untar the "UNIX_SET_JAVA_2.1.tar.gz" file (eg. gzip -d &lt; UNIX_SET_JAVA_2.1.tar.gz 
+          | tar xf -) </LI>
+        <LI>Run the installation shell script "SET_JavaInterface.sh" (eg. sh 
+          SET_JavaInterface.sh) </LI>
+        <LI>At the prompts enter the information you have gathered at Step 2</LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4>
+<P>Running the Java Interface</P>
+</FONT><B><FONT FACE="Arial">
+<P>Step 4. Running the Java example</P>
+</font></B><B><FONT FACE="Arial"></font></B> 
+<UL>
+  <FONT FACE="Arial"></font> 
+  <DIR><FONT FACE="Arial"></font> 
+    <DIR> <FONT FACE="Arial"></font> 
+      <UL>
+        <FONT FACE="Arial"><B> </b></font> 
+        <LI>Once the installation of the Java Payment Client Interface is complete 
+          and the web server is configured to execute Java servlets, you should 
+          be able to run the example that uses the Java Interface. This should 
+          be able to start from the following URL: <A HREF="http://127.0.0.1/SET_Order.html">http://localhost/Java_SET_Order.html</A> 
+        </LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4>
+<P><font face="HelveticaNeue ThinExt" size="4">How to use the examples in your 
+  Shop &amp; Buy</font></P>
+</FONT>
+<dir> 
+  <dir> 
+    <dir> 
+      <dir> <font face="HelveticaNeue ThinExt" size=4> </font> 
+        <p>Before integrating into your Shop & Buy it is important to understand 
+          the message flow of the files contained within the package. Once the 
+          Java_SET_Order.html file's form is completed, the following steps occur: 
+        </p>
+      </dir>
+    </dir>
+  </dir>
+</dir>
+<ul>
+  <dir> 
+    <dir> 
+      <ul>
+        <li>The form submits the field values to SET_DO_Servlet (DO - stands for 
+          Digital Order).</li>
+        <li>This file will make a call to the Payment Client, which will request 
+          a SET wakeup message from the MPOS.</li>
+        <li>The MPOS will return a SET wakeup message to SET_Start_Servlet.</li>
+        <li>SET_Start_Servlet displays a message indicating that a payment is 
+          in progress and it sends the wakeup message to SET_Wakeup_Servlet.</li>
+        <li>SET_Wakeup_Servlet will receive this message and invoke the customer's 
+          wallet. When the customer processes a payment using their wallet the 
+          response is caught by SET_Transaction_Servlet.</li>
+        <li>SET_Transaction_Servlet brokers a payment initialisation with the 
+          MPOS and provides the link between the customer and the MPOS for subseqent 
+          messages. </li>
+      </ul>
+    </dir>
+  </dir>
+</ul>
+<dir> 
+  <dir> 
+    <dir> 
+      <dir> 
+        <dir> 
+          <dir> 
+            <dir> <b></b> 
+              <p><font face="Arial"><b>NOTE :</b></font><font face="Arial"> For 
+                the integrator even more logic is hidden. The servlet source is 
+                well documented to show the basic method of initializing a SET 
+                payment.</font></p>
+            </dir>
+          </dir>
+        </dir>
+        <p>Logical flow through a SET Payment process: </p>
+      </dir>
+    </dir>
+  </dir>
+</dir>
+<ul>
+  <dir> 
+    <dir> 
+      <ul>
+        <li>Creating a PaymentClient instance </li>
+        <li>Sending a getDigitalOrder call </li>
+        <li>Closing the instance </li>
+        <li>Taking an encrypted DR (Digital Receipt) </li>
+        <li>Creating a PaymentClient Instance </li>
+        <li>Then use the getDigitalOrder called to decypt it. </li>
+        <li>Invoking the SET wallet</li>
+        <li>Closing the instance </li>
+      </ul>
+    </dir>
+  </dir>
+</ul>
+<dir> 
+  <dir> 
+    <dir> 
+      <dir> 
+        <p>For further information refer to the in-code documentation and the 
+          Payment Client Manual. </p>
+      </dir>
+    </dir>
+  </dir>
+</dir>
+<FONT FACE="HelveticaNeue Extended" SIZE=5>
+<P>Files included:</P>
+</FONT><FONT FACE="HelveticaNeue ThinExt" SIZE=4><P>HTML</P>
+
+</FONT><UL><DIR><DIR>
+<UL>
+
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4>
+</font>
+        <LI>Java_SET_Order.html </LI>
+      </UL>
+</DIR>
+</DIR>
+</UL>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4><P>Java Classes</P>
+
+</FONT><UL><DIR><DIR>
+      <UL>
+        <FONT FACE="HelveticaNeue ThinExt" SIZE=4> </font> 
+        <LI>SET_DO_Servlet</LI>
+        <LI>SET_Start_Servlet</LI>
+        <LI>SET_Transaction_Servlet</LI>
+        <LI>SET_Wakeup_Servlet</LI>
+      </UL>
+</DIR>
+</DIR>
+</UL>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4>
+<P>Other</P>
+</FONT><FONT FACE="HelveticaNeue ThinExt" SIZE=4></FONT> 
+<UL>
+  <DIR> 
+    <DIR> 
+      <UL>
+        <FONT FACE="HelveticaNeue ThinExt" SIZE=4> </font> 
+        <LI>This file</LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+</BODY>
+</HTML>

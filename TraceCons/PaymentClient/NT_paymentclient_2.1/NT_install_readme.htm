@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<TITLE>QSI Payment Client Installation</TITLE></HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" bgcolor="#FFFFFF">
+<P ALIGN="CENTER"><FONT SIZE=2>&nbsp;</FONT><I><FONT FACE="Arial" SIZE=7>Payment Client</font></i></P>
+<FONT FACE="Arial" SIZE=7>
+<P ALIGN="CENTER">Install - NT</P>
+<P ALIGN="CENTER">V 2.1</P>
+</FONT><FONT FACE="HelveticaNeue Extended" SIZE=5>
+<P>NT Payment Client Installation</P>
+</FONT><DIR><DIR>
+<DIR>
+      <DIR> <FONT FACE="HelveticaNeue Extended" SIZE=5> </font> 
+        <P>This is the procedure to install an NT Payment Client.</P>
+      </DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4>
+<P>Before you start</P>
+</FONT><B><FONT FACE="Arial"><P>Step 1. The following assumptions are made: </P>
+
+</font></B><UL><FONT FACE="Arial"></font><DIR><FONT FACE="Arial"></font><DIR>
+<FONT FACE="Arial"></font><UL>
+
+
+<FONT FACE="Arial"><B>
+</b></font><LI>You have a Java Runtime Environment installed on your server </LI>
+        <LI>You have Administrator privileges.</LI>
+        <LI>You have received the "qsi.3" and "qsi.4" key files from your Payment 
+          Service Provider. (Look for them in the installation directory).</LI>
+<LI>You have a valid Merchant Id </LI></UL>
+</DIR>
+</DIR>
+</UL>
+
+<B><FONT FACE="Arial"><P>Step 2. You will need the following information prior to the install: </P>
+
+</font></B> 
+<UL>
+  <FONT FACE="Arial"></font> 
+  <DIR><FONT FACE="Arial"></font> 
+    <DIR> <FONT FACE="Arial"></font> 
+      <UL>
+        <FONT FACE="Arial"><B> </b></font> 
+        <LI>Determine where you would prefer the Payment Client to be installed. 
+          The default destination is C:\QSIPayments</LI>
+        <LI>The URL of the Payment Server the Payment Client will talk to. If 
+          you are unsure of this URL, consult your Payment Service Provider.</LI>
+        <LI>Determine if you require the Payment Client to be installed with COM 
+          support. If COM installation is selected, the installation will register 
+          the COM object and install tools for the object's unregistration and 
+          reregistration.</LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4><P>Installing the Payment Client</P>
+</FONT><B><FONT FACE="Arial">
+<P>Step 3. Running the InstallShield</P>
+
+</font></B><UL><FONT FACE="Arial"></font><DIR><FONT FACE="Arial"></font><DIR>
+<FONT FACE="Arial"></font>
+      <UL>
+        <FONT FACE="Arial"><B> </b></font> 
+        <LI>Using NT Explorer, execute the file NT_paymentclient_2.1\setup.exe</LI>
+        <LI>Follow the prompts and enter the information from step 2 when required.</LI>
+        <LI>You may be prompted to restart your computer. Please do so.</LI>
+      </UL>
+</DIR>
+</DIR>
+</UL>
+
+<p><b><font face="Arial">Step 4. The post-installation test</font></b></p>
+<ul>
+  <ul>
+    <ul>
+      <ul>
+        <li>You may test your installation upon completion by running Start | 
+          QSIPayments | PaymentClient | Test Payment Client. <br>
+        </li>
+        <li>The self-test is in two parts. The first test determines whether the 
+          Payment Client object can be instantiated. The second test determines 
+          whether the system can formulate a Digital Order.</li>
+      </ul>
+    </ul>
+  </ul>
+</ul>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

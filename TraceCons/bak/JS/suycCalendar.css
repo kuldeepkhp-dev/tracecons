@@ -1,0 +1,23 @@
+.calCalendar {
+    background-color: '#d4d0c8' ;
+    border: '2px Outset #dddddd' ; }
+		    
+.calClickable {
+    cursor: Hand ;
+	text-decoration: None ; }
+
+.calClickable_hover {
+    cursor: Hand ;
+    color:	'#0a246a' ;
+    font-weight: Bolder ; }
+
+.calTitleBar {
+    background-color: '#3a6ea5' ;
+    font-weight: Bolder ;
+    color: '#ffffff' ; }
+
+.calDay {
+	background-color: '#d4d0c8' ; }
+    
+.calDayCurrent {
+	background-color: Blue ; }

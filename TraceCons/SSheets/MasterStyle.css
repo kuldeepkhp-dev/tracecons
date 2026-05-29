@@ -1,0 +1,188 @@
+<!-- BACKGROUND-COLOR: #CCCC99
+background:#669900;
+-->
+
+BODY
+	{
+		PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 86%; 
+		PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: Black; PADDING-TOP: 0px; 
+		BACKGROUND-COLOR: #E8E8D0;
+		
+	}
+BODY 
+	{
+		FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+	}
+
+A.button:hover
+	{
+		FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif;
+		color:  #003366;
+		background:	#336600;
+	}
+A.button:visited
+	{
+	text-decoration:        none;
+	color:          #003366;
+	background:     #3333CC;
+	}
+
+
+
+A:link {font-size:9.0pt;color:#3300CC;text-decoration: none}
+A:visited {font-size:9.0pt;color:#800080;text-decoration: none}
+A:hover {font-size:9.3pt; color: #666600}
+
+.TbClass{background:55555; border-left:solid #4d99e5 1px;border-right:solid #4d99e5 1px;border-bottom:solid #4d99e5 1px; }
+.TbClass1{border-left:solid #828282 1px;border-right:solid #828282 1px;border-bottom:solid #828282 1px;;border-top:solid #828282 1px; }
+.test1{border-left:solid #9b72cf 1px;border-right:solid #9b72cf 1px; font-face:verdina; font-size=10 ;}
+.test2{border-left:solid #9b72cf 1px;border-right:solid #9b72cf 1px;border-bottom:solid #9b72cf 1px;}
+.test3{bgcolor:7777;}
+
+.formbackground
+{mso-style-parent:style0;
+font-size:9.0pt;
+color:Yellow;
+font-weight:400;
+font-family:Arial, sans-serif;
+mso-font-charset:0;
+border:.5pt solid windowtext;
+background:#0099CC;
+mso-pattern:auto none;}
+
+.formExp
+{mso-style-parent:style0;
+font-size:12pt;
+color:blue;
+font-weight:400;
+font-family:Arial,verdana,sans-serif;
+mso-font-charset:0;
+border:.6pt solid windowtext;
+background:#CCCC99;
+mso-pattern:auto none;}
+
+.exprow
+{mso-style-parent:style0;
+font-size:11.0pt;
+color:#FFFFCC;
+font-weight:400;
+font-family:Arial, sans-serif;
+mso-font-charset:0;
+border:.1pt solid windowtext;
+background:#333333;
+mso-pattern:auto none;}
+
+.exprow1
+{mso-style-parent:style0;
+font-size:9.0pt;
+color:#444444;
+font-weight:400;
+font-family:Arial, sans-serif;
+mso-font-charset:0;
+border:.1pt solid windowtext;
+background:#C6C484;
+mso-pattern:auto none;}
+
+.exprow2
+{mso-style-parent:style0;
+font-size:10.0pt;
+color:#FFFFCC;
+font-weight:400;
+font-family:Arial, sans-serif;
+mso-font-charset:0;
+border:.1pt solid windowtext;
+background:#6F7A4B;
+mso-pattern:auto none;}
+
+.row1
+{mso-style-parent:style0;
+font-size:10.0pt;
+color:#F8F8EF ;
+font-weight:800;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+mso-font-charset:0;
+border:.5pt solid windowtext;
+background:#8AB185;
+mso-pattern:auto none;}
+
+
+.header
+{mso-style-parent:style0;
+font-size:13.0pt;
+color:white;
+font-weight:400;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+mso-font-charset:0;
+border:.0pt solid windowtext;
+background:#8AB185;
+mso-pattern:auto none;}
+
+
+.row2
+{mso-style-parent:style0;
+font-size:8.0pt;
+color:#330000;
+font-weight:200;
+font-family:Verdana, Arial, sans-serif;
+mso-font-charset:0;
+border:.3pt solid windowtext;
+background:#DBDBB5;
+mso-pattern:auto none;}
+
+.rowMsg
+{mso-style-parent:style0;
+font-size:25.0pt;
+color:#330000;
+font-weight:500;
+font-family:Verdana, Arial, sans-serif;
+mso-font-charset:0;
+border:.3pt solid windowtext;
+background:#DBDBB5;
+mso-pattern:auto none;}
+
+.rowPayment
+{mso-style-parent:style0;
+font-size:15.0pt;
+color:#330000;
+font-weight:500;
+font-family:Verdana, Arial, sans-serif;
+mso-font-charset:0;
+border:.3pt solid windowtext;
+background:#DBDBB5;
+mso-pattern:auto none;}
+
+.col1
+{mso-style-parent:style0;
+color:black;
+font-size:8.0pt;
+font-weight:700;
+font-family:Arial, sans-serif;
+mso-font-charset:0;
+border:.5pt solid windowtext;
+background:White;
+mso-pattern:auto none;}
+
+.col2
+{mso-style-parent:style0;
+color:White;
+font-size:8.0pt;
+font-weight:700;
+font-family:Arial, sans-serif;
+mso-font-charset:0;
+border:.5pt solid windowtext;
+background:#3366CC;
+mso-pattern:auto none;}
+
+
+.logintext
+{mso-style-parent:style0;
+font-size:10.0pt;
+color:Black;
+font-weight:400;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+mso-font-charset:0;
+border:.0pt solid windowtext;
+
+mso-pattern:auto none;}
+
+<!--background:#E8E8D0;-->

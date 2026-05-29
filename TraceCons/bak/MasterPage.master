@@ -1,0 +1,43 @@
+<%@ master language="C#" autoeventwireup="true" inherits="MasterPage, App_Web_ixcqzp9m" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Importer Module</title>
+    <link href="SSheets/MasterStyle.css" rel="stylesheet" type="text/css" />  
+    <script language="javascript" src="JS/encmd5.js"></script>
+    <script language="javascript" src="JS/JScript.js"></script>
+    <script language="javascript" src="JS/date-picker.js"></script>
+    <script language="javascript" src="JS/suycCalendar.js"></script>
+    <script language="javascript" src="JS/AgmarkJScript.js"></script>
+    
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+   
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0"  onload="javascript:history.go(1);">
+    <form id="form1" runat="server" autocomplete="off">
+       
+    <table width="100%" >
+    <tr>
+    <td background="images/bg.jpg" >
+        <asp:Image ID="Image1" ImageUrl="~/images/Header.jpg" runat="server" /></td>
+    </tr>
+    <tr> 
+    <td>
+        <asp:contentplaceholder id="RegCPH" runat="server">
+            <br />
+           
+            <br />
+        </asp:contentplaceholder>
+        </td>
+    </tr>
+    </table>
+        
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<script language="vbscript" runat="server">
+ReDim TopicName(0)
+ReDim TopicDescription(0)
+
+sub application_onstart
+
+	'******************* make ecom connection
+	
+	Application("conn_ConnectionString")="DRIVER={SQL Server};SERVER=server;database=Allproductffvdb;UID=sa;PWD=sa"
+
+		Application("conn_ConnectionString1")="DRIVER={SQL Server};SERVER=server;UID=apeda_com_2;PWD=apeda86"
+
+	'forcodex
+
+
+	'Application("con_str")="DRIVER={SQL Server};SERVER=203.197.214.124;UID=codex;PWD=codex123"
+	application("daily_hit")=0
+	application("today")=date()
+     '###########################################################
+     ' set title
+     Application("Title") = "ASP Chat"
+     ' Create your chat rooms below, do not modify anything else/
+     CreateRoom "Floriculture and Seeds", "Floriculture and Seeds"
+     CreateRoom "Processed Foods and Vegetables", "Processed Foods and Vegetables"
+     CreateRoom "Animal Products", "Animal Products"
+     CreateRoom "Fruits and Vegetables", "Fruits and Vegetables"
+	  CreateRoom "Cereals", "Cereals"
+	  CreateRoom "Other Processed Foods", "Other Processed Foods"
+  CreateRoom "Apeda Officials", "Apeda Officials"
+     '###########################################################
+	 
+     Application("TopicNames") = TopicName
+ Session("Topic") = WeekdayName(weekday(date))&"-"&Replace(date(),"/","-")
+     Application("TopicDescriptions") = TopicDescription
+
+     Dim Users()
+     Redim Users(1)
+     Dim UsersGroup()
+     Redim UsersGroup(1)
+     Application("Users") = Users
+     Application("UsersGroup") = UsersGroup
+
+     Dim UsersIP()
+     Redim UsersIP(1)
+     Dim UsersTimeOn()
+     Redim UsersTimeOn(1)
+     Dim UsersIdleOn()
+     Redim UsersIdleTime(1)
+     Application("UsersIP") = UsersIP
+     Application("UsersTimeOn") = UsersTimeOn
+     Application("UsersIdleTime") = UsersIdleTime 
+
+
+
+
+
+server.ScriptTimeOut=3000
+
+application("hit_counter") = 500
+end sub
+
+sub session_onstart
+application.Lock 
+application("hit_counter") = application("hit_counter") + 1
+application.UnLock 
+'session("user_id")=""
+session("topimage")="../images/allproducts.gif"
+session.timeout=10
+'added for error
+if not isdate(application("today")) then
+application("today")=date()
+end if
+'*************************************************************************** Daily Hit Counter
+	if application("today")<>date() then
+	'connect to database
+		set Conn=server.CreateObject ("ADODB.connection")
+		Conn.Open Application("conn_ConnectionString")
+	inssql="insert into dailyhit values ('"& application("today") &"','"& application("daily_hit") &"')"
+	//conn.execute inssql
+	conn.close
+	Application("daily_hit")=1
+	application("today")=date()
+	else
+		application.lock
+		Application("daily_hit")=Application("daily_hit")+1
+
+	'''*************************************************************************** Update total hits
+		set Conn1=server.CreateObject ("ADODB.connection")
+		Conn1.Open Application("conn_ConnectionString")
+		inssql1="update hits set hitcount= hitcount +1 "
+		//conn1.execute inssql1
+		conn1.close
+	'''*****************************************************************************
+
+
+
+
+
+		application.unlock
+	end if
+'*****************************************************************************
+end sub
+
+sub application_onend
+server.scripttimeout=90
+end sub
+'Sub Session_OnStart
+ '  Session.Timeout=2
+ 'End Sub
+
+ Sub Session_OnEnd
+    Topic = Session("Topic")
+    Name = Session("Name")
+
+    Users = Application("Users")
+    UsersIP = Application("UsersIP")
+    UsersTimeOn = Application("UsersTimeOn")
+    UsersIdleTime = Application("UsersIdleTime")
+
+    Match = 1
+    If IsArray(Users) Then
+           UsersGroup = Application("UsersGroup")
+           NumOfUsers = UBound(Users)
+           If NumOfUsers = 1 Then
+                 Set Application("Users") = Nothing
+                 Set Application("UsersGroup") = Nothing
+
+                 Set Application("UsersIP") = Nothing
+                 Set Application("UsersIdleTime") = Nothing
+                 Set Application("UsersTimeOn") = Nothing
+           Else 
+              ReDim UpdatedUsers(1)
+              ReDim UpdatedUsersGroup(1)
+
+              ReDim UpdatedUsersIP(1)
+              ReDim UpdatedUsersTimeOn(1)
+              ReDim UpdatedUsersIdleTime(1)
+              For I = 1 To NumOfUsers
+                  If Name <> Users(I) Then
+                       ReDim Preserve UpdatedUsers(Match)
+                       ReDim Preserve UpdatedUsersGroup(Match)
+                       UpdatedUsers(Match) = Users(I)
+                       UpdatedUsersGroup(Match) = UsersGroup(I)
+
+
+                       ReDim Preserve UpdatedUsersIP(Match)
+                       ReDim Preserve UpdatedUsersTimeOn(Match)
+                       ReDim Preserve UpdatedUsersIdleTime(Match)
+                       UpdatedUsersIP(Match) = UsersIP(I)
+                       UpdatedUsersTimeOn(Match) = UsersTimeOn(I)
+                       UpdatedUsersIdleTime(Match) = UsersIdleTime(I)
+
+                       Match = Match + 1
+                  End If
+              Next
+              Application("Users") = UpdatedUsers
+              Application("UsersGroup") = UpdatedUsersGroup
+
+              Application("UsersIP") = UpdatedUsersIP
+              Application("UsersTimeOn") = UpdatedUsersTimeOn
+              Application("UsersIdleTime") = UpdatedUsersIdleTime
+
+           End If
+   End If
+
+
+   Set fileObject = Server.CreateObject("Scripting.FileSystemObject")
+   textFile = Application("filebase") & Replace(Topic, "+", "_") & ".txt"
+   'If fileObject.FileExists(textfile) Then
+         Set inStream = fileObject.OpenTextFile(textFile,1,TRUE,FALSE)
+         file = inStream.ReadAll
+         Set inStream = Nothing
+
+         file = file & "<FONT SIZE=2 FACE='Vedana,Arial' Color=#808080><b>***[" &  Name & " has exited (" & Now & ")]***</b></FONT><br>"
+         Set outStream = fileObject.CreateTextFile(textFile,True)
+         outStream.WriteLine(file)
+	 outStream.Close
+         Set outStream = Nothing
+   'End If
+
+   Session("Enter") = True
+   session.Abandon
+ End Sub
+
+ Sub CreateRoom(Name, Description)
+   		nLen = UBound(TopicName)+1
+   		ReDim Preserve TopicName(nLen)
+   		TopicName(nLen) = Name
+   		ReDim Preserve TopicDescription(nLen)
+   		TopicDescription(nLen) = Description
+		
+ End Sub
+
+
+</script>
+
+<html>
+
+<head>
+<title></title>
+</head>
+
+<body>
+</body>
+</html>

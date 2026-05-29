@@ -1,0 +1,68 @@
+A.cOn {	FONT-WEIGHT: bolder; TEXT-DECORATION: none
+}
+A:link {color:#336633}
+A:visited {color:#800080}
+A:hover {color:#333399}
+#article {
+	BACKGROUND: white; COLOR: black; FONT: 12pt Verdana, geneva, arial, sans-serif; PADDING-BOTTOM: 0px; PADDING-LEFT: 5pt; PADDING-RIGHT: 15pt; PADDING-TOP: 10pt}
+#article P.start {
+	TEXT-INDENT: 0pt}
+#article P {
+	FONT-SIZE: 10pt; MARGIN-TOP: 0pt; TEXT-INDENT: 12pt}
+#article #author {
+	FONT-STYLE: italic; MARGIN-BOTTOM: 5pt; TEXT-INDENT: 0pt}
+#pageList P {
+	PADDING-TOP: 10pt}
+#article H3 {
+	FONT-WEIGHT: bold}
+#article DL {
+	FONT-SIZE: 10pt}
+UL {
+	FONT-SIZE: 10pt}
+OL {
+	FONT-SIZE: 10pt}
+#bigbox {
+	FLOAT: right}
+
+#menubar {
+	BACKGROUND: lightgrey; CURSOR: default; FONT: menu; POSITION: relative; Z-INDEX: 1
+	
+}
+#menubar .root {
+	BORDER-BOTTOM: lightgrey 1px solid; BORDER-LEFT: lightgrey 1px solid; BORDER-RIGHT: lightgrey 1px solid; BORDER-TOP: lightgrey 1px solid; PADDING-LEFT: 2pt; PADDING-RIGHT: 2pt
+}
+#menubar TABLE {
+	BACKGROUND: lightgrey; BORDER-BOTTOM: gray 2px solid; BORDER-LEFT: #eeeeee 2px solid; BORDER-RIGHT: gray 2px solid; BORDER-TOP: #eeeeee 2px solid; DISPLAY: none; FONT: menu; MARGIN: 0pt; PADDING-BOTTOM: 0pt; PADDING-LEFT: 0pt; PADDING-RIGHT: 0pt; PADDING-TOP: 0pt; POSITION: absolute
+}
+#menubar TABLE TD {
+	MARGIN: 0pt; PADDING-BOTTOM: 2pt; PADDING-LEFT: 12pt; PADDING-RIGHT: 15pt; PADDING-TOP: 2pt
+}
+#menubar .highlight {
+	BACKGROUND: #80AA77; COLOR: #669900
+
+}
+#menubar .disabledhighlight {
+	BACKGROUND: navy; COLOR: gray
+}
+#menubar #break {
+	COLOR: gray
+}
+#menubar .disabled {
+	COLOR: gray
+}
+#menubar #break {
+	MARGIN: 0pt; PADDING-BOTTOM: 0pt; PADDING-LEFT: 0pt; PADDING-RIGHT: 0pt; PADDING-TOP: 0pt
+}
+#menubar .more {
+	FLOAT: right; FONT: 9pt webdings; HEIGHT: 9pt; LEFT: 14pt; MARGIN: 0pt; PADDING-BOTTOM: 0pt; PADDING-LEFT: 0pt; PADDING-RIGHT: 0pt; PADDING-TOP: 0pt; POSITION: relative; TOP: -2pt; WIDTH: 0.8em
+}
+#menubar .left {
+	MARGIN-LEFT: -11pt
+}
+#GoMenu {
+	WIDTH: 120pt
+}
+
+#colors TD {
+	FONT-SIZE: 1pt; HEIGHT: 10pt; MARGIN: 0pt; PADDING-BOTTOM: 0pt; PADDING-LEFT: 0pt; PADDING-RIGHT: 0pt; PADDING-TOP: 0pt; WIDTH: 10pt
+}

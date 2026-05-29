@@ -1,0 +1,337 @@
+<!--
+----- Copyright --------------------------------------------------------
+(c)2000 Copyright QSI Payments, Inc. - All Rights Reserved
+Copyright Statement: http://www.qsipayments.com/copyright/Payment_Client
+------------------------------------------------------------------------
+
+Identification:
+	$Id: NT_ADMIN_PERL_2.1.html,v 1.1 2000/05/17 06:14:17 jeremym Exp $	
+-->
+
+<HTML>
+<HEAD>
+<TITLE>NT_ADMIN_PERL_0.2.1-1</TITLE>
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" bgcolor="#FFFFFF">
+<P ALIGN="CENTER">&nbsp;<I><FONT FACE="Arial" SIZE=7>Payment Client</font></i></P>
+<FONT FACE="Arial" SIZE=7> 
+<P ALIGN="CENTER">Administration Methods<br>
+  Perl/CGI Interface</P>
+<P ALIGN="CENTER">V 2.1</P>
+</FONT><FONT FACE="HelveticaNeue Extended" SIZE=5> 
+<P>Perl Integration Examples</P>
+</FONT> 
+<DIR> 
+  <DIR> 
+    <DIR> 
+      <DIR> <FONT FACE="HelveticaNeue Extended" SIZE=5> </font> 
+        <p>This is an example of Perl integration to the Payment Client for the 
+          Administration Methods Payment Capture and Shopping Transaction History 
+          Search.</p>
+      </DIR>
+    </DIR>
+  </DIR>
+</DIR>
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4> 
+<P>Before you start</P>
+</FONT><B><FONT FACE="Arial"> 
+<P>Step 1. The following assumptions are made: </P>
+</font></B> 
+<UL>
+  <FONT FACE="Arial"></font> 
+  <DIR><FONT FACE="Arial"></font> 
+    <DIR> <FONT FACE="Arial"></font> 
+      <UL>
+        <FONT FACE="Arial"><B> </b></font> 
+        <li>You have Perl installed on your server </li>
+        <li>Your Web Server is configured to use Perl/CGI </li>
+        <li>You have a Java Runtime Environment installed on your server </li>
+        <li>You have Administrator privileges for your computer</li>
+        <li>The Payment Client has been installed</li>
+        <LI>Your merchant record at the Bank has the following configuration: 
+          <ul>
+            <li>Merchant granted privilege 'advanceMA'; </li>
+            <li>Merchant Agent granted privilege 'advanceMA'; and</li>
+            <li>Merchant Transaction Type is Auth/Capture.</li>
+          </ul>
+        </LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+<B><FONT FACE="Arial"> 
+<P>Step 2. You will need the following information prior to the install: </P>
+</font></B> 
+<UL>
+  <FONT FACE="Arial"></font> 
+  <DIR><FONT FACE="Arial"></font> 
+    <DIR> <FONT FACE="Arial"></font> 
+      <UL>
+        <FONT FACE="Arial"><B> </b></font> 
+        <li>Payment Client installation directory </li>
+        <li>Web Server cgi-bin directory (eg. c:\Inetpub\cgi-bin) </li>
+        <li>Directory of your Perl executable (eg. c:\perl\bin) </li>
+        <li>Perl scripts directory </li>
+        <li>HTML file directory (eg. c:\Inetpub\wwwroot) </li>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4> 
+<P>Installing Perl integration examples</P>
+</FONT><FONT FACE="HelveticaNeue ThinExt" SIZE=4></FONT><B><FONT FACE="Arial"> 
+<P><b><font face="Arial">Step 3. Running the Installshield</font></b></P>
+</font></B>
+<ul>
+  <font face="Arial"></font> 
+  <dir><font face="Arial"></font> 
+    <dir> <font face="Arial"></font> 
+      <ul>
+        <font face="Arial"><b> </b></font> 
+        <li>Execute the file .\NT_admin_perl\setup.exe</li>
+        <li>At the prompts enter the information you have gathered at Step 2</li>
+      </ul>
+    </dir>
+  </dir>
+</ul>
+<p><font face="HelveticaNeue ThinExt" size="4">Running the Perl Interface</font></p>
+<p><b><font face="Arial">Step 4. Running the PCThread listener</font></b></p>
+<ul>
+  <font face="Arial"></font> 
+  <dir><font face="Arial"></font> 
+    <dir> <font face="Arial"></font> 
+      <ul>
+        <font face="Arial"><b> </b></font> 
+        <li>To start using the Perl interface the PCService class must be run. 
+          This initiates a listener thread for the Perl to address. This listener 
+          thread is initiated by typing "java PaymentClient.PCService" at the 
+          command prompt.</li>
+      </ul>
+    </dir>
+  </dir>
+</ul>
+<p></p>
+<B><FONT FACE="Arial">
+<P>Step 5. Running the Perl example</P>
+</font></B><B><FONT FACE="Arial"></font></B> 
+<UL>
+  <FONT FACE="Arial"></font> 
+  <DIR><FONT FACE="Arial"></font> 
+    <DIR> <FONT FACE="Arial"></font> 
+      <UL>
+        <FONT FACE="Arial"><B> </b></font> 
+        <LI>Once the installation of the Perl Payment Client Interface is complete 
+          and the listener thread is running, you should be able to run the examples 
+          that use the Perl Interface and were included in this package.<br>
+          <b>Admin Capture: </b><A HREF="http://127.0.0.1/AdminCapture.html">http://localhost/AdminCapture.html</A><br>
+          <b>Admin Shopping Transaction Search: </b> <a href="http://127.0.0.1/AdminShopTrans.html">http://localhost/AdminShopTrans.html</a><br>
+        </LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4> 
+<P>How to use the examples in your Shop &amp; Buy</P>
+</FONT> 
+<DIR> 
+  <DIR> 
+    <DIR> 
+      <DIR> <FONT FACE="HelveticaNeue ThinExt" SIZE=4> </font> 
+        <p>Before integrating into your Shop & Buy it is important to understand 
+          the message flow of the files contained within the package. </p>
+        <p><b>Admin Capture:<br>
+          </b>Once the AdminCapture.html file's form is completed, the following 
+          steps occur: </p>
+      </DIR>
+    </DIR>
+  </DIR>
+</DIR>
+<UL>
+  <DIR> 
+    <DIR> 
+      <UL>
+        <LI>The form submits the field values to AdminCapture.cgi</LI>
+        <LI>This cgi will make calls to the PaymentClient.pl which marshalls the 
+          calls across a socket to the Java components of the Payment Client. 
+          This is the reason for the other Perl scripts to maintain this socket 
+          connection.</LI>
+        <LI>The Java component of the Payment Client takes care of encryption 
+          and messaging to the Payment Server.</LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+<DIR> 
+  <DIR> 
+    <DIR> 
+      <DIR> 
+        <DIR> 
+          <DIR> 
+            <DIR> <B></B> 
+              <P><FONT FACE="Arial"><B>NOTE :</b></font><FONT FACE="Arial"> For 
+                the integrator much of this logic is hidden. The CGI scripts are 
+                well documented to show the basic method of initializing a payment.</font></P>
+            </DIR>
+          </DIR>
+        </DIR>
+        <P>Logical flow through an SSL Payment process: </P>
+      </DIR>
+    </DIR>
+  </DIR>
+</DIR>
+<UL>
+  <DIR> 
+    <DIR> 
+      <UL>
+        <LI>Creating a Payment Client instance </LI>
+        <LI>Sending a doAdminCapture call </LI>
+        <LI>Taking an encrypted DR (Digital Receipt) </LI>
+        <LI>Closing the instance </LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+<DIR> 
+  <DIR> 
+    <DIR> 
+      <DIR> <FONT FACE="HelveticaNeue ThinExt" SIZE=4> </font> 
+        <p>&nbsp;</p>
+        <p><b>Admin Shopping Transaction Search:<br>
+          </b>Once the AdminShopTrans.html file's form is completed, the following 
+          steps occur: </p>
+      </DIR>
+    </DIR>
+  </DIR>
+</DIR>
+<UL>
+  <DIR> 
+    <DIR> 
+      <UL>
+        <LI>The form submits the field values to AdminShopTrans.cgi</LI>
+        <LI>This cgi will make calls to the PaymentClient.pl which marshalls the 
+          calls across a socket to the Java components of the Payment Client. 
+          This is the reason for the other Perl scripts to maintain this socket 
+          connection.</LI>
+        <LI>The Java component of the Payment Client takes care of encryption 
+          and messaging to the Payment Server.</LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+<DIR> 
+  <DIR> 
+    <DIR> 
+      <DIR> 
+        <DIR> 
+          <DIR> 
+            <DIR> <B></B> 
+              <P><FONT FACE="Arial"><B>NOTE :</b></font><FONT FACE="Arial"> For 
+                the integrator much of this logic is hidden. The CGI scripts are 
+                well documented to show the basic method of initializing a payment.</font></P>
+            </DIR>
+          </DIR>
+        </DIR>
+        <P>Logical flow through a Admin Shopping Transaction Search process: </P>
+      </DIR>
+    </DIR>
+  </DIR>
+</DIR>
+<UL>
+  <DIR> 
+    <DIR> 
+      <UL>
+        <LI>Creating a Payment Client instance </LI>
+        <LI>Sending a doAdminShoppingTransactionHistory call </LI>
+        <LI>Taking an encrypted DR (Digital Receipt) </LI>
+        <LI>Closing the instance </LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL><DIR> 
+  <DIR> 
+    <DIR> 
+      <DIR> 
+            <p>For further information refer to the in-code documentation and 
+              the Payment Client Manual. </p>
+      </DIR>
+    </DIR>
+  </DIR>
+</DIR>
+<FONT FACE="HelveticaNeue Extended" SIZE=5> 
+<P>Files included:</P>
+</FONT><FONT FACE="HelveticaNeue ThinExt" SIZE=4> 
+<P>HTML</P>
+</FONT> 
+<UL>
+  <DIR> 
+    <DIR> 
+      <UL>
+        <LI>AdminCapture.html
+        <LI>AdminShopTrans.html
+      </UL>
+      </DIR>
+  </DIR>
+</UL>
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4> 
+<P>Java Classes</P>
+</FONT> 
+<UL>
+  <DIR> 
+    <DIR> 
+      <UL>
+        <FONT FACE="HelveticaNeue ThinExt" SIZE=4> </font> 
+        <LI>PaymentClientThread.class </LI>
+        <LI>PCService.class </LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4> 
+<P>Perl</P>
+</FONT> 
+<UL>
+  <DIR> 
+    <DIR> 
+      <UL>
+        <FONT FACE="HelveticaNeue ThinExt" SIZE=4> </font> 
+        <LI>PaymentClient.pl </LI>
+        <LI>ftplib.pl </LI>
+        <LI>sock.pl </LI>
+        <LI>URL.pl </LI>
+        <LI>url_get.pl </LI>
+        <LI>pcInstall.pl </LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4> 
+<P>CGI</P>
+</FONT> 
+<UL>
+  <DIR> 
+    <DIR> 
+      <UL>
+        <FONT FACE="HelveticaNeue ThinExt" SIZE=4> </font> 
+        <LI>AdminCapture.cgi</LI>
+        <LI>AdminCapture_Error.cgi</LI>
+        <LI>AdminShopTrans.cgi</LI>
+        <LI>AdminShopTrans_Error.cgi</LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+<FONT FACE="HelveticaNeue ThinExt" SIZE=4> 
+<P>Other</P>
+</FONT> 
+<UL>
+  <DIR> 
+    <DIR> 
+      <UL>
+        <FONT FACE="HelveticaNeue ThinExt" SIZE=4> </font> 
+        <LI>This file</LI>
+      </UL>
+    </DIR>
+  </DIR>
+</UL>
+</BODY>
+</HTML>

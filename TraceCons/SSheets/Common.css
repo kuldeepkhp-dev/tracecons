@@ -1,0 +1,105 @@
+<STYLE TYPE="text/css">
+	A:link {color:#003399}
+	A:visited {color:#800080}
+	A:hover {color:#C43309}
+	TD {font-family: Verdana,Arial,Helvetica; font-size: xx-small;}
+	TH {font-family: Verdana,Arial,Helvetica; font-size: xx-small;}
+	
+.CategoryLink
+{
+    FONT-SIZE: 8pt;
+    COLOR: #333366
+}
+A
+{
+    COLOR: #333366
+}
+.ListingLink
+{
+    FONT-SIZE: 8pt
+}
+.ShowcaseLink
+{
+    FONT-SIZE: 8pt
+}
+.PageHeader
+{
+    FONT-SIZE: 8pt;
+    TEXT-DECORATION: none
+}
+.BarHeader
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11pt;
+    COLOR: black;
+    FONT-STYLE: normal;
+    TEXT-DECORATION: none
+}
+.ItemBoxHeader
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 10pt;
+    COLOR: white;
+    TEXT-DECORATION: none
+}
+.ItemInfo
+{
+    FONT-SIZE: 9pt
+}
+.Required
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12pt;
+    COLOR: red;
+    TEXT-DECORATION: none
+}
+HTML
+{
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: Arial, Tahoma, Verdana
+}
+TH
+{	
+    BGCOLOR: "#000000";
+    COLOR: "#000099";
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: Arial, Tahoma, Verdana
+}
+TD
+{	
+    bgcolor: #233909;	
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: Arial, Tahoma, Verdana
+}
+.TextOnBack
+{
+    COLOR: black
+}
+.Tips
+{
+    FONT-WEIGHT: bold;
+    CURSOR: hand;
+    COLOR: green;
+    TEXT-DECORATION: underline
+}
+.Message
+{
+    FONT-SIZE: 12pt
+}
+.ListHeader
+{
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.CategoryLink2
+{
+    FONT-SIZE: 12pt;
+    COLOR: blue;
+    FONT-FAMILY: 'Times New Roman'
+}
+
+BODY {	BACKGROUND-COLOR: #CCCCCC; BORDER-BOTTOM: #99CCCC 1px solid; BORDER-LEFT: #99CCCC 1px solid; BORDER-RIGHT: #99CCCC 1px solid; BORDER-TOP: #99CCCC 1px solid; COLOR: #336633; FONT-FAMILY: Verdana; FONT-SIZE: 10px; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 2px
+}
+
+
+</style>
